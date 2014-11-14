@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class PlaceholderFragment extends Fragment implements ODKJson
 {
     private View rootView;
-    
+
     private ArrayList<Sport> sportList;
 
     public PlaceholderFragment()
