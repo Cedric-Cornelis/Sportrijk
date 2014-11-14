@@ -5,6 +5,7 @@ import java.util.Date;
 /**
  * Created by Cedric Cornelis on 14/11/2014.
  */
+
 public class Location {
 
     private String adres;
