@@ -16,7 +16,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Date;
 
 import be.vives.citroentjes.sportrijk.interfaces.ODKJson;
 import be.vives.citroentjes.sportrijk.model.Location;
@@ -93,7 +92,6 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
         {
             locatieJsonList = json.getJSONArray("sport_outdoorlocaties");
             sportList = new ArrayList<Sport>();
-            locationList = new ArrayList<Location>();
 
             for(int i = 0; i < locatieJsonList.length(); i++)
             {
@@ -101,16 +99,14 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 
                 String address = jsonObject.getString("adres");
                 String city = jsonObject.getString("gemeente");
-                String naam = jsonObject.getString("sport");
+                String name = jsonObject.getString("sport");
                 double longitude = jsonObject.getDouble("long");
                 double latitude = jsonObject.getDouble("lat");
-                Date dateNow = new Date();
-
 
                 locationObject = new Location(address, city, longitude, latitude, i+1);
-                sportObject = new Sport(naam,locationObject);
+                sportObject = new Sport(name,locationObject);
 
-                locationList.add(locationObject);
+                sportList.add(sportObject);
             }
         }
         catch(JSONException e)

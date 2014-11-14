@@ -14,7 +14,6 @@ public class Location {
     private double longitude;
     private double latitude;
     private int openDataId;
-    private ArrayList<Sport> sportLijst;
 
     public Location(String adres, String city, double longitude, double latitude, int openDataId) {
         this.address = adres;
