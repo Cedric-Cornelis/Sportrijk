@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Location {
 
-    private String adres;
+    private String address;
     private String city;
     private double longitude;
     private double latitude;
@@ -16,7 +16,7 @@ public class Location {
     private Date timeUpdate;
 
     public Location(String adres, String city, double longitude, double latitude, int openDataId, Date timeUpdate) {
-        this.adres = adres;
+        this.address = adres;
         this.city = city;
         this.longitude = longitude;
         this.latitude = latitude;
@@ -24,12 +24,12 @@ public class Location {
         this.timeUpdate = timeUpdate;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCity() {
