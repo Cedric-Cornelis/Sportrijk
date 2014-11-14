@@ -101,7 +101,7 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
                 String sport = jsonObject.getString("sport");
                 double longitude = jsonObject.getDouble("long");
                 double latitude = jsonObject.getDouble("lat");
-                
+
                 sportObject = new Sport(address, city, type, sport, longitude, latitude);
 
                 sportList.add(sportObject);
