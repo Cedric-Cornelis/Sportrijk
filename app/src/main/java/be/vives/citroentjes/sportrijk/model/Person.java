@@ -1,8 +1,10 @@
 package be.vives.citroentjes.sportrijk.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import be.vives.citroentjes.sportrijk.enums.Experience;
+import be.vives.citroentjes.sportrijk.enums.Gender;
 
 /**
  * Created by Cedric Cornelis on 14/11/2014.
@@ -12,9 +14,11 @@ public class Person {
     private String name;
     private String surName;
     private int age;
+    private Gender gender;
     private String userName;
     private String passWord;
     private Experience experience;
+    private Date birthDate;
     private ArrayList<Person> friends;
 
     public String getName() {
@@ -39,6 +43,14 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public String getUserName() {
@@ -76,5 +88,20 @@ public class Person {
     public void addFriends(Person person)
     {
         friends.add(person);
+    }
+
+    public void removeFriends(Person person)
+    {
+        //Moet nog controle bijkomen om te checken of de persoon nog met iemand in relatie is.
+        friends.remove(friends.indexOf(person));
+
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }
