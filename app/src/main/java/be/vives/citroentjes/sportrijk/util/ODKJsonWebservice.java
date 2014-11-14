@@ -27,29 +27,29 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 {
     ODKJson listener;
 
-    JSONArray sportLijst;
-    ArrayList<Sport> sporten;
+    JSONArray sportJsonList;
+    ArrayList<Sport> sportList;
 
     @Override
     protected JSONObject doInBackground(ODKJson... params)
     {
         listener = params[0];
 
-        StringBuilder sportenBuilder = new StringBuilder();
+        StringBuilder sportBuilder = new StringBuilder();
 
-        HttpClient sportenClient = new DefaultHttpClient();
+        HttpClient sportClient = new DefaultHttpClient();
 
         try
         {
-            HttpGet sportenGet = new HttpGet("http://data.drk.be/kortrijk/sport_outdoorlocaties.json");
+            HttpGet sportGet = new HttpGet("http://data.drk.be/kortrijk/sport_outdoorlocaties.json");
 
-            HttpResponse sportenResponse = sportenClient.execute(sportenGet);
-            StatusLine sportenSearchStatus = sportenResponse.getStatusLine();
+            HttpResponse sportResponse = sportClient.execute(sportGet);
+            StatusLine sportSearchStatus = sportResponse.getStatusLine();
 
-            if(sportenSearchStatus.getStatusCode() == 200)
+            if(sportSearchStatus.getStatusCode() == 200)
             {
-                HttpEntity sportenEntity = sportenResponse.getEntity();
-                InputStream placesContent = sportenEntity.getContent();
+                HttpEntity sportEntity = sportResponse.getEntity();
+                InputStream placesContent = sportEntity.getContent();
                 InputStreamReader placesInput = new InputStreamReader(placesContent);
                 BufferedReader placesReader = new BufferedReader(placesInput);
 
@@ -57,7 +57,7 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 
                 while((lineIn = placesReader.readLine()) != null)
                 {
-                    sportenBuilder.append(lineIn);
+                    sportBuilder.append(lineIn);
                 }
 
             }
@@ -71,7 +71,7 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 
         try
         {
-            jsonObject = new JSONObject(sportenBuilder.toString());
+            jsonObject = new JSONObject(sportBuilder.toString());
         }
         catch(Exception e)
         {
@@ -88,24 +88,23 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 
         try
         {
-            sportLijst = json.getJSONArray("sport_outdoorlocaties");
-            sporten = new ArrayList<Sport>();
+            sportJsonList = json.getJSONArray("sport_outdoorlocaties");
+            sportList = new ArrayList<Sport>();
 
-            for(int i = 0; i < sportLijst.length(); i++)
+            for(int i = 0; i < sportJsonList.length(); i++)
             {
-                JSONObject jsonObject = sportLijst.getJSONObject(i);
+                JSONObject jsonObject = sportJsonList.getJSONObject(i);
 
-                String adres = jsonObject.getString("adres");
-                String gemeente = jsonObject.getString("gemeente");
-                String soort = jsonObject.getString("soort");
+                String address = jsonObject.getString("adres");
+                String city = jsonObject.getString("gemeente");
+                String type = jsonObject.getString("soort");
                 String sport = jsonObject.getString("sport");
                 double longitude = jsonObject.getDouble("long");
                 double latitude = jsonObject.getDouble("lat");
+                
+                sportObject = new Sport(address, city, type, sport, longitude, latitude);
 
-                //kot = new Kot(straat, huisnummer, gemeente, kamers, longitude, latitude);
-                sportObject = new Sport(adres, gemeente, soort, sport, longitude, latitude);
-
-                sporten.add(sportObject);
+                sportList.add(sportObject);
             }
         }
         catch(JSONException e)
@@ -113,6 +112,6 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
             e.printStackTrace();
         }
 
-        listener.updateArray(sporten);
+        listener.updateArray(sportList);
     }
 }

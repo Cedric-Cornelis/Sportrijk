@@ -6,9 +6,9 @@ package be.vives.citroentjes.sportrijk.model;
 public class Sport
 {
 
-    private String adres;
-    private String gemeente;
-    private String soort;
+    private String address;
+    private String city;
+    private String type;
     private String sport;
     private double longitude;
     private double latitude;
@@ -18,40 +18,44 @@ public class Sport
 
     }
 
-    public Sport(String adres, String gemeente, String soort, String sport, double longitude, double latitude)
+    public Sport(String address, String city, String type, String sport, double longitude, double latitude)
     {
-        this.adres = adres;
-        
+        this.address = address;
+        this.city = city;
+        this.type = type;
+        this.sport = sport;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
-    public String getAdres()
+    public String getAddress()
     {
-        return adres;
+        return address;
     }
 
-    public void setAdres(String adres)
+    public void setAddress(String address)
     {
-        this.adres = adres;
+        this.address = address;
     }
 
-    public String getGemeente()
+    public String getCity()
 {
-    return gemeente;
+    return city;
 }
 
-    public void setGemeente(String gemeente)
+    public void setCity(String city)
     {
-        this.gemeente = gemeente;
+        this.city = city;
     }
 
-    public String getSoort()
+    public String getType()
     {
-        return soort;
+        return type;
     }
 
-    public void setSoort(String soort)
+    public void setType(String type)
     {
-        this.soort = soort;
+        this.type = type;
     }
 
     public String getSport()
