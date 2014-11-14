@@ -1,26 +1,25 @@
 package be.vives.citroentjes.sportrijk;
 
-import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
+
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+
+import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity implements OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new LoginFragment())
                     .commit();
         }
     }
@@ -35,16 +34,30 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            //code voor de up-button
+            case android.R.id.home:
+                FragmentManager fm= getSupportFragmentManager();
+                if(fm.getBackStackEntryCount()>0){
+                    fm.popBackStack();
+                }
+                break;
+            default:
+                break;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void showNextFragment(int button) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        switch(button)
+        {
+            case 0:
+                fragmentTransaction.replace(R.id.container, new HubFragment());
+                break;
+        }
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }
