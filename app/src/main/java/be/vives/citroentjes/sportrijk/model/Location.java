@@ -1,5 +1,6 @@
 package be.vives.citroentjes.sportrijk.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,13 +14,15 @@ public class Location {
     private double longitude;
     private double latitude;
     private int openDataId;
+    private int sportID;
 
-    public Location(String adres, String city, double longitude, double latitude, int openDataId) {
+    public Location(String adres, String city, double longitude, double latitude, int openDataId, int spid) {
         this.address = adres;
         this.city = city;
         this.longitude = longitude;
         this.latitude = latitude;
         this.openDataId = openDataId;
+        this.sportID = spid;
     }
 
     public String getAddress() {

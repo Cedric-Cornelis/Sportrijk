@@ -5,6 +5,6 @@ package be.vives.citroentjes.sportrijk.enums;
  */
 public enum Gender {
 
-    MAN,WOMAN
+    MALE, FEMALE
 
 }

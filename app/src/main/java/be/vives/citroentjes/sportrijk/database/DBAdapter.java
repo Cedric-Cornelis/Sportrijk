@@ -120,8 +120,8 @@ public class DBAdapter {
                     "( " + KEY_LOCATION_ID + " integer primary key autoincrement, " +
                     KEY_LOCATION_ADDRESS + " text not null, " +
                     KEY_LOCATION_CITY+ " text not null, " +
-                    KEY_LOCATION_LONGITUDE + " text not null, " +
-                    KEY_LOCATION_LATITUDE + " text not null, " +
+                    KEY_LOCATION_LONGITUDE + " real not null, " +
+                    KEY_LOCATION_LATITUDE + " real not null, " +
                     KEY_LOCATION_OPENDATAID + "integer null, " +
                     KEY_LOCATION_TIMEUPDATE + "integer null);";
 
