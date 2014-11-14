@@ -59,7 +59,6 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
                 {
                     sportBuilder.append(lineIn);
                 }
-
             }
         }
         catch(Exception e)
