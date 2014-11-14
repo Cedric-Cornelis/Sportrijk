@@ -13,13 +13,23 @@ import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 
 public class MainActivity extends ActionBarActivity implements OnFragmentInteractionListener{
 
+
+    private boolean login=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
+            if (login == false)
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container, new LoginFragment())
+                        .commit();
+        }
+        else
+        {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new LoginFragment())
+                    .add(R.id.container, new HubFragment())
                     .commit();
         }
     }
@@ -55,6 +65,7 @@ public class MainActivity extends ActionBarActivity implements OnFragmentInterac
         {
             case 0:
                 fragmentTransaction.replace(R.id.container, new HubFragment());
+                login=true;
                 break;
         }
         fragmentTransaction.addToBackStack(null);
