@@ -125,6 +125,8 @@ public class DBAdapter {
                     KEY_LOCATION_OPENDATAID + "integer null, " +
                     KEY_LOCATION_TIMEUPDATE + "integer null);";
 
+    static final String DATABASE_DROP_TABLE = "DROP TABLE IF EXISTS ";
+
     final Context context;
 
     DatabaseHelper DBHelper;
@@ -159,6 +161,30 @@ public class DBAdapter {
                 e.printStackTrace();
             }
         }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+        {
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_PERSON);
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_FRIEND);
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_ACHIEVEMENTS);
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_EARNEDACHIEVEMENTS);
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_SPORT);
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_LOCATION);
+            db.execSQL(DATABASE_DROP_TABLE + DATABASE_TABLE_SPORTLOCATION);
+        }
     }
 
+    //---opens the database---
+    public DBAdapter open() throws SQLException
+    {
+        db = DBHelper.getWritableDatabase();
+        return this;
+    }
+
+    //---closes the database---
+    public void close()
+    {
+        DBHelper.close();
+    }
 }
