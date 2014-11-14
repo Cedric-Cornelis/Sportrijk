@@ -25,7 +25,7 @@ public class HubFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_hub, container, false);
-        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(false);
         return view;
     }
 
