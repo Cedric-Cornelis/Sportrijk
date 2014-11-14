@@ -28,7 +28,7 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 {
     ODKJson listener;
 
-    JSONArray locatieJsonList;
+    JSONArray locationJsonList;
     ArrayList<Sport> sportList;
     ArrayList<Location> locationList;
 
@@ -90,12 +90,12 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 
         try
         {
-            locatieJsonList = json.getJSONArray("sport_outdoorlocaties");
+            locationJsonList = json.getJSONArray("sport_outdoorlocaties");
             sportList = new ArrayList<Sport>();
 
-            for(int i = 0; i < locatieJsonList.length(); i++)
+            for(int i = 0; i < locationJsonList.length(); i++)
             {
-                JSONObject jsonObject = locatieJsonList.getJSONObject(i);
+                JSONObject jsonObject = locationJsonList.getJSONObject(i);
 
                 String address = jsonObject.getString("adres");
                 String city = jsonObject.getString("gemeente");
