@@ -14,15 +14,14 @@ public class Location {
     private double longitude;
     private double latitude;
     private int openDataId;
-    private int sportID;
+    private ArrayList<Sport> sportLijst;
 
-    public Location(String adres, String city, double longitude, double latitude, int openDataId, int spid) {
+    public Location(String adres, String city, double longitude, double latitude, int openDataId) {
         this.address = adres;
         this.city = city;
         this.longitude = longitude;
         this.latitude = latitude;
         this.openDataId = openDataId;
-        this.sportID = spid;
     }
 
     public String getAddress() {

@@ -16,8 +16,10 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Date;
 
 import be.vives.citroentjes.sportrijk.interfaces.ODKJson;
+import be.vives.citroentjes.sportrijk.model.Location;
 import be.vives.citroentjes.sportrijk.model.Sport;
 
 /**
@@ -27,8 +29,9 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 {
     ODKJson listener;
 
-    JSONArray sportJsonList;
+    JSONArray locatieJsonList;
     ArrayList<Sport> sportList;
+    ArrayList<Location> locationList;
 
     @Override
     protected JSONObject doInBackground(ODKJson... params)
@@ -83,27 +86,31 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
     @Override
     protected void onPostExecute(JSONObject json)
     {
+        Location locationObject;
         Sport sportObject;
 
         try
         {
-            sportJsonList = json.getJSONArray("sport_outdoorlocaties");
+            locatieJsonList = json.getJSONArray("sport_outdoorlocaties");
             sportList = new ArrayList<Sport>();
+            locationList = new ArrayList<Location>();
 
-            for(int i = 0; i < sportJsonList.length(); i++)
+            for(int i = 0; i < locatieJsonList.length(); i++)
             {
-                JSONObject jsonObject = sportJsonList.getJSONObject(i);
+                JSONObject jsonObject = locatieJsonList.getJSONObject(i);
 
                 String address = jsonObject.getString("adres");
                 String city = jsonObject.getString("gemeente");
-                String type = jsonObject.getString("soort");
-                String sport = jsonObject.getString("sport");
+                String naam = jsonObject.getString("sport");
                 double longitude = jsonObject.getDouble("long");
                 double latitude = jsonObject.getDouble("lat");
+                Date dateNow = new Date();
 
-                //sportObject = new Sport(address, city, type, sport, longitude, latitude);
 
-                //sportList.add(sportObject);
+                locationObject = new Location(address, city, longitude, latitude, i+1);
+                sportObject = new Sport(naam,locationObject);
+
+                locationList.add(locationObject);
             }
         }
         catch(JSONException e)
