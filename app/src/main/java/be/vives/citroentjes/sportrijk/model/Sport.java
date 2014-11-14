@@ -8,16 +8,17 @@ public class Sport
 
     private String name;
     private int ID;
+    private Location sportLocation;
 
     public Sport()
     {
 
     }
 
-    public Sport(int id, String name)
+    public Sport(String name, Location location)
     {
-        this.ID = id;
         this.name = name;
+        sportLocation = location;
     }
 
     public String getName() {
