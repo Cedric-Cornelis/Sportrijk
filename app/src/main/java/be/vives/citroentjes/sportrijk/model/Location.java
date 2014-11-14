@@ -13,7 +13,6 @@ public class Location {
     private double longitude;
     private double latitude;
     private int openDataId;
-    private Date timeUpdate;
 
     public Location(String adres, String city, double longitude, double latitude, int openDataId, Date timeUpdate) {
         this.address = adres;
@@ -21,7 +20,6 @@ public class Location {
         this.longitude = longitude;
         this.latitude = latitude;
         this.openDataId = openDataId;
-        this.timeUpdate = timeUpdate;
     }
 
     public String getAddress() {
@@ -62,13 +60,5 @@ public class Location {
 
     public void setOpenDataId(int openDataId) {
         this.openDataId = openDataId;
-    }
-
-    public Date getTimeUpdate() {
-        return timeUpdate;
-    }
-
-    public void setTimeUpdate(Date timeUpdate) {
-        this.timeUpdate = timeUpdate;
     }
 }
