@@ -8,7 +8,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Date;
+
+import be.vives.citroentjes.sportrijk.database.DBAdapter;
+import be.vives.citroentjes.sportrijk.enums.Gender;
+import be.vives.citroentjes.sportrijk.enums.Level;
 import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
+import be.vives.citroentjes.sportrijk.model.Person;
 
 
 public class MainActivity extends ActionBarActivity implements OnFragmentInteractionListener{
@@ -19,6 +25,8 @@ public class MainActivity extends ActionBarActivity implements OnFragmentInterac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             if (login == false)
@@ -32,6 +40,10 @@ public class MainActivity extends ActionBarActivity implements OnFragmentInterac
                     .add(R.id.container, new HubFragment())
                     .commit();
         }
+
+
+
+
     }
 
 
