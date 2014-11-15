@@ -2,10 +2,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="be.vives.citroentjes.sportrijk.HubFragment">
+    tools:context="be.vives.citroentjes.sportrijk.HubFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="15px"
+        android:id="@+id/btnStartRoute"
+        android:text="@string/btnStartRoute"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/btnMedailles"
+        android:gravity="center"
+        android:layout_margin="15px"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_margin="15px"
+        android:gravity="center">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/btnVrienden"
+            android:gravity="center"
+            android:id="@+id/btnVrienden"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/btnDelen"
+            android:gravity="center"
+            android:id="@+id/btnDelen"/>
+        </LinearLayout>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:id="@+id/btnAbout"
+        android:text="@string/btnAbout"/>
 </LinearLayout>
