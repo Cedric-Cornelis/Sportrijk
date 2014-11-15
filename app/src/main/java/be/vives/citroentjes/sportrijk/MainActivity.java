@@ -68,7 +68,8 @@ public class MainActivity extends ActionBarActivity implements OnFragmentInterac
                 login=true;
                 break;
             case 1:
-            fragmentTransaction.replace(R.id.container,new SportrouteOne());
+                fragmentTransaction.replace(R.id.container,new SportrouteOne());
+                break;
         }
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
