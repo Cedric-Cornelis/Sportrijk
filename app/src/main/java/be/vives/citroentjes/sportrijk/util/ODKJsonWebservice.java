@@ -30,7 +30,6 @@ public class ODKJsonWebservice extends AsyncTask<ODKJson, Void, JSONObject>
 
     JSONArray locationJsonList;
     ArrayList<Sport> sportList;
-    ArrayList<Location> locationList;
 
     @Override
     protected JSONObject doInBackground(ODKJson... params)
