@@ -56,9 +56,6 @@ public class DBAdapter {
     static final String KEY_LOCATION_LONGITUDE = "lLong";
     static final String KEY_LOCATION_LATITUDE = "lLat";
     static final String KEY_LOCATION_OPENDATAID = "lOpenDataID";
-    static final String KEY_LOCATION_TIMEUPDATE = "lTimeUpdate";
-
-    static final String TAG = "DBAdapter";
 
     static final String DATABASE_NAME = "DB_SPORTRIJK";
     static final String DATABASE_TABLE_PERSON = "Person";
@@ -121,8 +118,7 @@ public class DBAdapter {
                     KEY_LOCATION_CITY+ " text not null, " +
                     KEY_LOCATION_LONGITUDE + " real not null, " +
                     KEY_LOCATION_LATITUDE + " real not null, " +
-                    KEY_LOCATION_OPENDATAID + "integer null, " +
-                    KEY_LOCATION_TIMEUPDATE + "integer null);";
+                    KEY_LOCATION_OPENDATAID + "integer null);";
 
     static final String DATABASE_DROP_TABLE = "DROP TABLE IF EXISTS ";
 
@@ -135,6 +131,40 @@ public class DBAdapter {
     {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
+    }
+
+    //---insert sport---
+    public void insertSport(Sport sport)
+    {
+        db = DBHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(KEY_SPORT_SPORTID, sport.getID());
+        values.put(KEY_SPORT_SPORTNAME, sport.getName());
+
+        db.insert(DATABASE_TABLE_SPORT, null, values);
+
+        db.close();
+    }
+
+    //---insert location---
+    public void insertLocation(Sport sport)
+    {
+        db = DBHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(KEY_LOCATION_ID, sport.getLocation().getId());
+        values.put(KEY_LOCATION_ADDRESS, sport.getLocation().getAddress());
+        values.put(KEY_LOCATION_CITY, sport.getLocation().getCity());
+        values.put(KEY_LOCATION_LONGITUDE, sport.getLocation().getLongitude());
+        values.put(KEY_LOCATION_LATITUDE, sport.getLocation().getLatitude());
+        values.put(KEY_LOCATION_OPENDATAID, sport.getLocation().getOpenDataId());
+
+        db.insert(DATABASE_TABLE_LOCATION, null, values);
+
+        db.close();
     }
     
     public static class DatabaseHelper extends SQLiteOpenHelper
