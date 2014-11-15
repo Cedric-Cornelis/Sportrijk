@@ -19,6 +19,7 @@ import be.vives.citroentjes.sportrijk.model.Sport;
  * Created by Jorre on 14/11/2014. en Ik :D
  */
 public class DBAdapter {
+
     static final String KEY_PERSON_ID = "pID";
     static final String KEY_PERSON_NAME = "pName";
     static final String KEY_PERSON_SURNAME = "pSurName";
@@ -215,5 +216,13 @@ public class DBAdapter {
     public void close()
     {
         DBHelper.close();
+    }
+
+    public void insertPerson(Person person)
+    {
+        ContentValues values = new ContentValues();
+        values.put(this.KEY_PERSON_ID,person.getID());
+        values.put(this.KEY_PERSON_BIRTHDATE,person.getBirthdate());
+        
     }
 }
