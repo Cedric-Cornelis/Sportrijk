@@ -6,5 +6,10 @@
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">Hello blank fragment!</string>
     <string name="btnLogin">Login</string>
+    <string name="btnStartRoute">Start route</string>
+    <string name="btnMedailles">Medailles</string>
+    <string name="btnDelen">Delen</string>
+    <string name="btnVrienden">Vrienden</string>
+    <string name="btnAbout">About</string>
 
 </resources>
