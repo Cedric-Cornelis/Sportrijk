@@ -74,7 +74,10 @@ public class MainActivity extends ActionBarActivity implements OnFragmentInterac
                 fragmentTransaction.replace(R.id.container, new CreateRouteTwo());
                 break;
             case 3:
-                //fragmentTransaction.replace(R.id.container, new RouteMap());
+                fragmentTransaction.replace(R.id.container, new SportouteMap());
+                break;
+            case 4:
+                //fragmentTransaction.replace(R.id.container, new SportrouteActivity());
                 break;
         }
         if(button!=0) {
