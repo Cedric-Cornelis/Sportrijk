@@ -188,11 +188,11 @@ public class DBAdapter {
     }
 
     //geeft een person terug vanuit de database
-    public Person getPerson(String gebruikersnaam) throws SQLException
+    public Person getPerson(String username) throws SQLException
     {
         db = DBHelper.getReadableDatabase();
 
-        Cursor cursor = db.query(DATABASE_TABLE_PERSON, new String[]{KEY_PERSON_USERNAME, KEY_PERSON_PASSWORD}, KEY_PERSON_USERNAME + " = '" + gebruikersnaam + "'", null, null, null, null, null);
+        Cursor cursor = db.query(DATABASE_TABLE_PERSON, new String[]{KEY_PERSON_USERNAME, KEY_PERSON_PASSWORD}, KEY_PERSON_USERNAME + " = '" + username + "'", null, null, null, null, null);
 
         if(cursor != null)
         {
