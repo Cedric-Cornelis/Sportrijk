@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Bestemming - nr. 3 - De Gavers"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Activiteit"
+        android:textSize="20dp"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:hint="Een watersport die wordt beoefend met behulp van een surfplank waarop een zeil is gemonteerd. Daarnaast wordt een giek gebruikt om het zeil te bedienen, en zit er een vin onder de surfplank."
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Timer"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="00:00:00"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNextActivity"
+        android:text="@string/btnNextActivity"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStopActivity"
+        android:text="Stop Activiteit"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+
+</LinearLayout>

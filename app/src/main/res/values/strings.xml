@@ -47,5 +47,6 @@
     <string name="rbNieuw">Nieuwe route</string>
     <string name="btnVerder">Verder</string>
     <string name="Voorkeur">Sportvoorkeur (kies 1 of meer)</string>
+    <string name="btnNextActivity">Volgende Activiteit</string>
 
 </resources>
