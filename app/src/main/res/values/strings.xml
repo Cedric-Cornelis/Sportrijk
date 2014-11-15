@@ -10,6 +10,12 @@
     <string name="btnMedailles">Medailles</string>
     <string name="btnDelen">Delen</string>
     <string name="btnVrienden">Vrienden</string>
+    <string name="rbAlleen">Alleen</string>
+    <string name="rbSamen">Samen</string>
+    <string name="rbWillekeurig">Willekeurig route</string>
+    <string name="rbNieuw">Nieuw route</string>
+    <string name="rbEigen">Eigen route</string>
     <string name="btnAbout">About</string>
+    <string name="btnVerder">Verder</string>
 
 </resources>

@@ -55,7 +55,7 @@ public class LoginFragment extends Fragment {
                 {
                         //person=get persoon aan de hand van username
                 }
-                    if(person.getUsername().equals(txtUsername.getText().toString()) && person.getPassword().equals(txtPassword.getText().toString())) {
+                    if(1==1/**person.getUsername().equals(txtUsername.getText().toString()) && person.getPassword().equals(txtPassword.getText().toString())**/) {
                     mListener.showNextFragment(0);
                 }
                 else

@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     tools:context="be.vives.citroentjes.sportrijk.LoginFragment"
     android:orientation="vertical"
-    android:background="@drawable/background"
     android:weightSum="1">
 
 
