@@ -62,10 +62,12 @@ public class CreateRouteTwo extends Fragment {
                 ArrayList<CheckBox> CheckList=new ArrayList<CheckBox>();
                 for (int i=0;i<ll.getChildCount();i++)
                 {
-                    if(ll.getChildAt(i) instanceof CheckBox)
-                    {
-                        if(((CheckBox) ll.getChildAt(i)).isChecked()) {
-                            CheckList.add((CheckBox) ll.getChildAt(i));
+                    LinearLayout llc=(LinearLayout) ll.getChildAt(i);
+                    for(int j=0;j<llc.getChildCount();j++) {
+                        if (llc.getChildAt(j) instanceof CheckBox) {
+                            if (((CheckBox) llc.getChildAt(j)).isChecked()) {
+                                CheckList.add((CheckBox) llc.getChildAt(j));
+                            }
                         }
                     }
                 }

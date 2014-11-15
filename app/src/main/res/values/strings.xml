@@ -16,12 +16,6 @@
     <string name="txtGebruikersnaam">Gebruikersnaam</string>
     <string name="txtPaswoord">paswoord</string>
     <string name="btnGoogle">Log in met Google+</string>
-    <string name="txtNaam">Naam</string>
-    <string name="txtVoornaam">Voornaam</string>
-    <string name="txtGeboortedatum">Geboortedatum</string>
-    <string name="txtEmail">E-mailadres</string>
-    <string name="txtRegistratie">Registratie</string>
-    <string name="btnVoltooi">Voltooien</string>
 
     <string-array name="transportArray">
         <item>Te voet</item>
@@ -47,6 +41,5 @@
     <string name="rbNieuw">Nieuwe route</string>
     <string name="btnVerder">Verder</string>
     <string name="Voorkeur">Sportvoorkeur (kies 1 of meer)</string>
-    <string name="btnNextActivity">Volgende Activiteit</string>
 
 </resources>
