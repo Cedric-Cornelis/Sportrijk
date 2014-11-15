@@ -7,7 +7,8 @@
 
     <RadioGroup
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/rgGroup">
         <RadioButton
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -21,7 +22,9 @@
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px">
+        android:layout_marginTop="30px"
+        android:id="@+id/rgRoute"
+        >
         <RadioButton
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -39,6 +42,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnVerder"/>
+        android:text="@string/btnVerder"
+        android:id="@+id/btnVerder"/>
 
 </LinearLayout>

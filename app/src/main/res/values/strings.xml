@@ -23,4 +23,29 @@
     <string name="txtRegistratie">Registratie</string>
     <string name="btnVoltooi">Voltooien</string>
 
+    <string-array name="transportArray">
+        <item>Te voet</item>
+        <item>Fiets</item>
+        <item>Skates</item>
+        <item>Longboard/skateboard</item>
+        <item>Wagen</item>
+    </string-array>
+    <string name="transport_Prompt">Kies een vervoersmiddel</string>
+    <string name="Baseball">Baseball</string>
+    <string name="Rugby">Rugby</string>
+    <string name="Lopen">Lopen</string>
+    <string name="Atletiek">Atletiek</string>
+    <string name="Skaten">Skaten</string>
+    <string name="volleybal">Volleybal</string>
+    <string name="baseball">Basebal</string>
+    <string name="Basketball">Basketbal</string>
+    <string name="voetbal">Voetbal</string>
+    <string name="rbAlleen">Alleen</string>
+    <string name="rbSamen">Samen</string>
+    <string name="rbWillekeurig">Willekeurige route</string>
+    <string name="rbEigen">Eigen route</string>
+    <string name="rbNieuw">Nieuwe route</string>
+    <string name="btnVerder">Verder</string>
+    <string name="Voorkeur">Sportvoorkeur (kies 1 of meer)</string>
+
 </resources>

@@ -8,8 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RadioGroup;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.zip.CheckedInputStream;
 
 import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 
@@ -17,23 +21,26 @@ import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SportrouteOne extends Fragment {
+public class CreateRouteTwo extends Fragment {
+
     private OnFragmentInteractionListener mListener;
     private View view;
 
-    public SportrouteOne() {
+
+    public CreateRouteTwo() {
         // Required empty public constructor
     }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_sportroute_one, container, false);
+        view=inflater.inflate(R.layout.fragment_create_route_two, container, false);
+        Button btnStartRoute=(Button) view.findViewById(R.id.btnVerder2);
+        btnStartRoute.setOnClickListener(btnVerder2Clicked);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-        Button btnVerder=(Button) view.findViewById(R.id.btnVerder);
-        btnVerder.setOnClickListener(btnVerderClicked);
         return view;
     }
 
@@ -47,27 +54,36 @@ public class SportrouteOne extends Fragment {
         }
     }
 
-    private View.OnClickListener btnVerderClicked = new View.OnClickListener() {
+    private View.OnClickListener btnVerder2Clicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (mListener != null) {
-                RadioGroup rgGroup=(RadioGroup) view.findViewById(R.id.rgGroup);
-                RadioGroup rgRoute=(RadioGroup) view.findViewById(R.id.rgRoute);
-                if(rgGroup.getCheckedRadioButtonId()!=-1&&rgRoute.getCheckedRadioButtonId()!=-1) {
-                    mListener.showNextFragment(2);
+                LinearLayout ll=(LinearLayout) view.findViewById(R.id.LLCeck);
+                ArrayList<CheckBox> CheckList=new ArrayList<CheckBox>();
+                for (int i=0;i<ll.getChildCount();i++)
+                {
+                    if(ll.getChildAt(i) instanceof CheckBox)
+                    {
+                        if(((CheckBox) ll.getChildAt(i)).isChecked()) {
+                            CheckList.add((CheckBox) ll.getChildAt(i));
+                        }
+                    }
+                }
+                if(CheckList.size()>0) {
+                    mListener.showNextFragment(3);
                 }
                 else
                 {
-                    Toast.makeText(getActivity().getBaseContext(), "Selecteer uw voorkeuren", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getBaseContext(), "Gelieve een activiteit te kiezen", Toast.LENGTH_SHORT).show();
                 }
             }
         }
     };
+
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
-
 }
