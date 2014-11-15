@@ -73,6 +73,9 @@ public class MainActivity extends ActionBarActivity implements OnFragmentInterac
             case 2:
                 fragmentTransaction.replace(R.id.container, new CreateRouteTwo());
                 break;
+            case 3:
+                //fragmentTransaction.replace(R.id.container, new RouteMap());
+                break;
         }
         if(button!=0) {
             fragmentTransaction.addToBackStack(null);
