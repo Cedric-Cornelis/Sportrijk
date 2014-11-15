@@ -9,18 +9,35 @@ import java.util.Date;
 
 public class Location {
 
+    private int id;
     private String address;
     private String city;
     private double longitude;
     private double latitude;
     private int openDataId;
 
-    public Location(String address, String city, double longitude, double latitude, int openDataId) {
+    public Location(int id, String address, String city, double longitude, double latitude, int openDataId) {
         this.address = address;
         this.city = city;
         this.longitude = longitude;
         this.latitude = latitude;
         this.openDataId = openDataId;
+    }
+
+    public Location(String address, String city, double longitude, double latitude, int id) {
+        this.address = address;
+        this.city = city;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getAddress() {
