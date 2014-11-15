@@ -42,4 +42,14 @@ public class Sport
     public void setID(int ID) {
         this.id = ID;
     }
+
+    public Location getLocation()
+    {
+        return sportLocation;
+    }
+
+    public void setLocation(Location locationObject)
+    {
+        this.sportLocation = locationObject;
+    }
 }
