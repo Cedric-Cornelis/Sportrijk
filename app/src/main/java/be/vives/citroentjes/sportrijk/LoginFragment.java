@@ -1,7 +1,6 @@
 package be.vives.citroentjes.sportrijk;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,18 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
-
-import be.vives.citroentjes.sportrijk.enums.Gender;
-import be.vives.citroentjes.sportrijk.enums.Level;
+import be.vives.citroentjes.sportrijk.database.DBAdapter;
 import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 import be.vives.citroentjes.sportrijk.model.Person;
 
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment
+{
     private OnFragmentInteractionListener mListener;
     private View view;
     private EditText txtUsername;
@@ -33,34 +29,45 @@ public class LoginFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_login, container, false);
+        view = inflater.inflate(R.layout.fragment_login, container, false);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(false);
-        Button btnLogin=(Button) view.findViewById(R.id.btnLogin);
+        Button btnLogin = (Button) view.findViewById(R.id.btnLogin);
 
-        txtUsername=(EditText) view.findViewById(R.id.txtUsername);
-        txtPassword=(EditText) view.findViewById(R.id.txtPassword);
+        txtUsername = (EditText) view.findViewById(R.id.txtUsername);
+        txtPassword = (EditText) view.findViewById(R.id.txtPassword);
 
         btnLogin.setOnClickListener(btnLoginClicked);
         return view;
     }
 
-    private View.OnClickListener btnLoginClicked = new View.OnClickListener() {
+    private View.OnClickListener btnLoginClicked = new View.OnClickListener()
+    {
         @Override
-        public void onClick(View v) {
-            if (mListener != null) {
+        public void onClick(View v)
+        {
+            if (mListener != null)
+            {
                 if(!txtUsername.getText().equals(null)&&!txtPassword.getText().equals(null))
                 {
-                        //person=get persoon aan de hand van username
-                }
-                    if(1==1/**person.getUsername().equals(txtUsername.getText().toString()) && person.getPassword().equals(txtPassword.getText().toString())**/) {
-                    mListener.showNextFragment(0);
+                    DBAdapter db = new DBAdapter(getActivity().getBaseContext());
+
+                    Person person = db.getPerson(txtUsername.toString());
+
+                    if(person != null)
+                    {
+                        if(person.getPassword().equals(txtPassword.toString()))
+                        {
+                            mListener.showNextFragment(0);
+                        }
+                    }
                 }
                 else
                 {
                     Toast.makeText(getActivity().getBaseContext(), "Password incorrect", Toast.LENGTH_LONG).show();
+                    txtPassword.setText("");
                 }
             }
             else

@@ -186,6 +186,34 @@ public class DBAdapter {
 
         db.close();
     }
+
+    //geeft een person terug vanuit de database
+    public Person getPerson(String gebruikersnaam) throws SQLException
+    {
+        db = DBHelper.getReadableDatabase();
+
+        Cursor cursor = db.query(DATABASE_TABLE_PERSON, new String[]{KEY_PERSON_USERNAME, KEY_PERSON_PASSWORD}, KEY_PERSON_USERNAME + " = '" + gebruikersnaam + "'", null, null, null, null, null);
+
+        if(cursor != null)
+        {
+            cursor.moveToFirst();
+        }
+
+        Person person;
+
+        try
+        {
+            person = new Person();
+            person.setUsername(cursor.getString(0));
+            person.setPassword(cursor.getString(1));
+        }
+        catch(Exception e)
+        {
+            person = null;
+        }
+
+        return person;
+    }
     
     public static class DatabaseHelper extends SQLiteOpenHelper
     {

@@ -14,24 +14,59 @@
         android:layout_margin="10dp" />
 
     <EditText
+        android:id="@+id/gebruikersnaam"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txtGebruikersnaam"
         android:layout_marginBottom="20dp"/>
 
     <EditText
+        android:id="@+id/wachtwoord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/txtWachtwoord"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/herhaalWachtwoord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/txtHerhaalWachtwoord"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/naam"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txtNaam"
         android:layout_marginBottom="20dp"/>
 
     <EditText
+        android:id="@+id/voornaam"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txtVoornaam"
         android:layout_marginBottom="20dp"/>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/txtMale"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/txtFemale"/>
+
+        </RadioGroup>
+
     <EditText
+        android:id="@+id/email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txtEmail"
@@ -55,11 +90,11 @@
         android:layout_marginBottom="10dp"/>
 
     <Button
+        android:id="@+id/btnVoltooien"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:text="@string/btnVoltooi"/>
-
 
 </LinearLayout>

@@ -41,5 +41,9 @@
     <string name="rbNieuw">Nieuwe route</string>
     <string name="btnVerder">Verder</string>
     <string name="Voorkeur">Sportvoorkeur (kies 1 of meer)</string>
+    <string name="txtWachtwoord">Wachtwoord</string>
+    <string name="txtHerhaalWachtwoord">Herhaal Wachtwoord</string>
+    <string name="txtMale">Male</string>
+    <string name="txtFemale">Female</string>
 
 </resources>
