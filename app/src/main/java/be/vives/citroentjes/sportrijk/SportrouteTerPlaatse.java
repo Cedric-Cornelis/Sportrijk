@@ -25,8 +25,8 @@ public class SportrouteTerPlaatse extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_login, container, false);
-        getActivity().getActionBar().setDisplayHomeAsUpEnabled(false);
+        view=inflater.inflate(R.layout.fragment_sportroute_terplaatse, container, false);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         Button btnNextActivity = (Button) view.findViewById(R.id.btnNextActivity);
 
         btnNextActivity.setOnClickListener(btnNextActivityClicked);

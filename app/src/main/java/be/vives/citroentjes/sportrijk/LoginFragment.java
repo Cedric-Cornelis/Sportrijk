@@ -35,11 +35,13 @@ public class LoginFragment extends Fragment
         view = inflater.inflate(R.layout.fragment_login, container, false);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(false);
         Button btnLogin = (Button) view.findViewById(R.id.btnLogin);
+        Button btnRegistreer =(Button) view.findViewById(R.id.btnRegistreer);
 
         txtUsername = (EditText) view.findViewById(R.id.txtUsername);
         txtPassword = (EditText) view.findViewById(R.id.txtPassword);
 
         btnLogin.setOnClickListener(btnLoginClicked);
+        btnRegistreer.setOnClickListener(btnRegistreerClicked);
         return view;
     }
 
@@ -50,15 +52,15 @@ public class LoginFragment extends Fragment
         {
             if (mListener != null)
             {
-                if(!txtUsername.getText().equals(null)&&!txtPassword.getText().equals(null))
+                if(1==1/*!txtUsername.getText().equals(null)&&!txtPassword.getText().equals(null)*/)
                 {
                     DBAdapter db = new DBAdapter(getActivity().getBaseContext());
 
                     Person person = db.getPerson(txtUsername.toString());
 
-                    if(person != null)
+                    if(1==1/*person != null*/)
                     {
-                        if(person.getPassword().equals(txtPassword.toString()))
+                        if(1==1/*person.getPassword().equals(txtPassword.toString())*/)
                         {
                             mListener.showNextFragment(0);
                         }
@@ -76,6 +78,18 @@ public class LoginFragment extends Fragment
             }
         }
     };
+
+
+    private View.OnClickListener btnRegistreerClicked = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (mListener != null) {
+
+                mListener.showNextFragment(5);
+            }
+        }
+    };
+
 
     public void onAttach(Activity activity) {
         super.onAttach(activity);

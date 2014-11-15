@@ -45,5 +45,13 @@
     <string name="txtHerhaalWachtwoord">Herhaal Wachtwoord</string>
     <string name="txtMale">Male</string>
     <string name="txtFemale">Female</string>
+    <string name="txtRegistratie">Registratie</string>
+    <string name="txtNaam">Naam</string>
+    <string name="txtVoornaam">Voornaam</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtGeboortedatum">Geboortedatum</string>
+    <string name="btnVoltooi">Voltooi</string>
+    <string name="btnBestemmingBereikt">Bestemming Bereikt</string>
+    <string name="btnNextActivity">Volgende activiteit</string>
 
 </resources>

@@ -28,7 +28,7 @@ public class SportouteMap extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_sportoute_map, container, false);
-        getActivity().getActionBar().setDisplayHomeAsUpEnabled(false);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         Button btnBestemmingBereikt=(Button) view.findViewById(R.id.btnBestemmingBereikt);
         btnBestemmingBereikt.setOnClickListener(btnBestemmingBereiktClicked);
         return view;
