@@ -12,7 +12,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtUsername"
-        android:background="#ffc2c2c2"
         android:layout_weight="0.05" />
     <EditText
         android:layout_width="fill_parent"
@@ -23,6 +22,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin"
         android:text="@string/btnLogin"
-        android:background="#ffffffff" />
+        android:background="@android:color/holo_red_dark" />
 
 </LinearLayout>
