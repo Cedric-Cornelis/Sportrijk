@@ -17,4 +17,13 @@
     <string name="txtPaswoord">paswoord</string>
     <string name="btnGoogle">Log in met Google+</string>
 
+    <string-array name="transportArray">
+        <item>Te voet</item>
+        <item>Fiets</item>
+        <item>Skates</item>
+        <item>Longboard/skateboard</item>
+        <item>Wagen</item>
+    </string-array>
+    <string name="transport_Prompt">Kies een vervoersmiddel</string>
+
 </resources>

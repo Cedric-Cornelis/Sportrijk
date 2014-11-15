@@ -7,9 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 
@@ -17,23 +14,24 @@ import be.vives.citroentjes.sportrijk.interfaces.OnFragmentInteractionListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SportrouteOne extends Fragment {
+public class CreateRouteTwo extends Fragment {
+
     private OnFragmentInteractionListener mListener;
     private View view;
 
-    public SportrouteOne() {
+
+    public CreateRouteTwo() {
         // Required empty public constructor
     }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_sportroute_one, container, false);
+        view=inflater.inflate(R.layout.fragment_create_route_two, container, false);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-        Button btnVerder=(Button) view.findViewById(R.id.btnVerder);
-        btnVerder.setOnClickListener(btnVerderClicked);
         return view;
     }
 
@@ -47,27 +45,9 @@ public class SportrouteOne extends Fragment {
         }
     }
 
-    private View.OnClickListener btnVerderClicked = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (mListener != null) {
-                RadioGroup rgGroup=(RadioGroup) view.findViewById(R.id.rgGroup);
-                RadioGroup rgRoute=(RadioGroup) view.findViewById(R.id.rgRoute);
-                if(rgGroup.getCheckedRadioButtonId()!=-1&&rgRoute.getCheckedRadioButtonId()!=-1) {
-                    mListener.showNextFragment(2);
-                }
-                else
-                {
-                    Toast.makeText(getActivity().getBaseContext(), "Selecteer uw voorkeuren", Toast.LENGTH_LONG).show();
-                }
-            }
-        }
-    };
-
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
-
 }
