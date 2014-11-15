@@ -11,5 +11,10 @@
     <string name="btnDelen">Delen</string>
     <string name="btnVrienden">Vrienden</string>
     <string name="btnAbout">About</string>
+    <string name="titleLogin">LOGIN</string>
+    <string name="btnRegistreer">Registreer</string>
+    <string name="txtGebruikersnaam">Gebruikersnaam</string>
+    <string name="txtPaswoord">paswoord</string>
+    <string name="btnGoogle">Log in met Google+</string>
 
 </resources>
