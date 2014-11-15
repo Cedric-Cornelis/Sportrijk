@@ -7,7 +7,7 @@ public class Sport
 {
 
     private String name;
-    private int ID;
+    private int id;
     private Location sportLocation;
 
     public Sport()
@@ -15,10 +15,16 @@ public class Sport
 
     }
 
-    public Sport(String name, Location location)
+        public Sport(int id, String name, Location location)
     {
         this.name = name;
         sportLocation = location;
+        this.id = id;
+    }
+
+    public Sport(String name, Location locationObject) {
+        this.name = name;
+        sportLocation = locationObject;
     }
 
     public String getName() {
@@ -30,10 +36,10 @@ public class Sport
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 }
