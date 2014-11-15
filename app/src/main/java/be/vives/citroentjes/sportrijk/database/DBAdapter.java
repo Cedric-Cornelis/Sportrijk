@@ -16,7 +16,7 @@ import be.vives.citroentjes.sportrijk.model.Person;
 import be.vives.citroentjes.sportrijk.model.Sport;
 
 /**
- * Created by Jorre on 14/11/2014.
+ * Created by Jorre on 14/11/2014. en Ik :D
  */
 public class DBAdapter {
     static final String KEY_PERSON_ID = "pID";
@@ -57,7 +57,6 @@ public class DBAdapter {
     static final String KEY_LOCATION_LATITUDE = "lLat";
     static final String KEY_LOCATION_OPENDATAID = "lOpenDataID";
     static final String KEY_LOCATION_TIMEUPDATE = "lTimeUpdate";
-
 
     static final String TAG = "DBAdapter";
 

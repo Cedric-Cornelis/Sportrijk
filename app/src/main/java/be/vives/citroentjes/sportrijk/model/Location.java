@@ -15,8 +15,8 @@ public class Location {
     private double latitude;
     private int openDataId;
 
-    public Location(String adres, String city, double longitude, double latitude, int openDataId) {
-        this.address = adres;
+    public Location(String address, String city, double longitude, double latitude, int openDataId) {
+        this.address = address;
         this.city = city;
         this.longitude = longitude;
         this.latitude = latitude;
