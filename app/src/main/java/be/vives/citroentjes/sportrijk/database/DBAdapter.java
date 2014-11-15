@@ -185,7 +185,6 @@ public class DBAdapter {
         db.insert(DATABASE_TABLE_PERSON, null, values);
 
         db.close();
-
     }
     
     public static class DatabaseHelper extends SQLiteOpenHelper
