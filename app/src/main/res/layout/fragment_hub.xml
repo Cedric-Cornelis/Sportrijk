@@ -5,7 +5,8 @@
     tools:context="be.vives.citroentjes.sportrijk.HubFragment"
     android:orientation="vertical"
     android:weightSum="1.0"
-    android:layout_margin="15px">
+    android:layout_margin="15px"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
