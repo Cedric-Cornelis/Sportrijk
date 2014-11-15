@@ -141,7 +141,6 @@ public class DBAdapter {
 
         ContentValues values = new ContentValues();
 
-        values.put(KEY_SPORT_SPORTID, sport.getID());
         values.put(KEY_SPORT_SPORTNAME, sport.getName());
 
         db.insert(DATABASE_TABLE_SPORT, null, values);
@@ -156,7 +155,6 @@ public class DBAdapter {
 
         ContentValues values = new ContentValues();
 
-        values.put(KEY_LOCATION_ID, sport.getLocation().getId());
         values.put(KEY_LOCATION_ADDRESS, sport.getLocation().getAddress());
         values.put(KEY_LOCATION_CITY, sport.getLocation().getCity());
         values.put(KEY_LOCATION_LONGITUDE, sport.getLocation().getLongitude());
@@ -166,6 +164,28 @@ public class DBAdapter {
         db.insert(DATABASE_TABLE_LOCATION, null, values);
 
         db.close();
+    }
+
+    //---insert person---
+    public void insertPerson(Person person)
+    {
+        db = DBHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(this.KEY_PERSON_NAME, person.getName());
+        values.put(this.KEY_PERSON_SURNAME, person.getSurname());
+        values.put(this.KEY_PERSON_BIRTHDATE, person.getBirthdate().toString());
+        values.put(this.KEY_PERSON_SEX, person.getSex().toString());
+        values.put(this.KEY_PERSON_LEVEL, person.getLevel().toString());
+        values.put(this.KEY_PERSON_USERNAME, person.getUsername());
+        values.put(this.KEY_PERSON_PASSWORD, person.getPassword());
+        values.put(this.KEY_PERSON_EMAIL, person.getEmail());
+
+        db.insert(DATABASE_TABLE_PERSON, null, values);
+
+        db.close();
+
     }
     
     public static class DatabaseHelper extends SQLiteOpenHelper
@@ -216,13 +236,5 @@ public class DBAdapter {
     public void close()
     {
         DBHelper.close();
-    }
-
-    public void insertPerson(Person person)
-    {
-        ContentValues values = new ContentValues();
-        values.put(this.KEY_PERSON_ID,person.getID());
-        values.put(this.KEY_PERSON_BIRTHDATE,person.getBirthdate());
-        
     }
 }
