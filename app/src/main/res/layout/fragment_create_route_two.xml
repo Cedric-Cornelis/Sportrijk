@@ -24,13 +24,16 @@
         android:orientation="vertical">
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/voetbal"/>
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Basketball"/>
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/baseball"/>
         </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -40,13 +43,15 @@
         <CheckBox
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:text="@string/volleybal"/>
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Skaten"/>
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Atletiek"/>
         </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -55,13 +60,16 @@
         android:orientation="vertical">
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Lopen"/>
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Rugby"/>
         <CheckBox
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Baseball"/>
         </LinearLayout>
     </LinearLayout>
 
